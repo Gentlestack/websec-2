@@ -6,9 +6,24 @@
     <title>Faculties</title>
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <a class="navbar-brand p-2">Расписание</a>
+        <form class="form-inline">
+            <div class="row">
+                <div class="col-8">
+                    <input class="form-control" type="text" placeholder="Введите номер группы" aria-label="Введите номер группы или ФИО преподавателя">
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-outline-success" type="submit">
+                        Поиск
+                    </button>
+                </div>
+            </div>
+        </form>
+    </nav>
     {% for faculty, id in faculties.items() %}
         <div class="list-group">
-            <a href="/faculties/{{id}}" class="list-group-item list-group-item-action">
+            <a href="/faculties/{{id}}/groups" class="list-group-item list-group-item-action">
                {{faculty}}
             </a>
         </div>

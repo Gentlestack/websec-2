@@ -6,10 +6,25 @@
     <title>Groups</title>
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <a class="navbar-brand p-2">Расписание</a>
+        <form class="form-inline">
+            <div class="row">
+                <div class="col-8">
+                    <input class="form-control" type="text" placeholder="Введите номер группы" aria-label="Введите номер группы или ФИО преподавателя">
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-outline-success" type="submit">
+                        Поиск
+                    </button>
+                </div>
+            </div>
+        </form>
+    </nav>
     <div class="container-fluid">
         <div class="row">
             {% for group, id in groups.items() %}
-            <a href="/faculties/" class="col-xs-6 col-sm-3 col-md-2">
+            <a href="/schedule/groups?groupId={{id}}" class="btn btn-light col-xs-6 col-sm-3 col-md-2">
                 {{group}}
             </a>
             {% endfor %}
